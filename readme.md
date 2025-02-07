@@ -9,3 +9,5 @@ The Movie Suggestion Engine is a powerful tool designed to recommend movies base
 - Advanced filtering options
 - Integration with popular movie databases
 - Continuous learning and improvement based on user feedback
+
+## Run Locally

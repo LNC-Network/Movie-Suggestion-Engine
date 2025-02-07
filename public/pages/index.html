@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Suggestion Engine</title>
-    <link rel="stylesheet" href="/public/stylesheets/styles.css" />
-    <script src="/public/javascripts/#" defer></script>
+    <link rel="stylesheet" href="../stylesheets/styles.css" />
+    <script src="../javascripts/suggestion_engine.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -27,23 +27,45 @@
       <!-- Card Container -->
       <div class="card-container">
         <div class="card">
-          <img src="/public/image/img1.png" alt="Movie 1" />
+          <img
+            src="../image/img1.png"
+            alt="Movie 1"
+            onclick="goToPage('movie1')"
+          />
         </div>
         <div class="card">
-          <img src="/public/image/img2.png" alt="Movie 2" />
+          <img
+            src="../image/img2.png"
+            alt="Movie 2"
+            onclick="goToPage('movie2')"
+          />
         </div>
         <div class="card">
-          <img src="/public/image/img3.png" alt="Movie 3" />
+          <img
+            src="../image/img3.png"
+            alt="Movie 3"
+            onclick="goToPage('movie3')"
+          />
         </div>
         <div class="card">
-          <img src="/public/image/img4.png" alt="Movie 4" />
+          <img
+            src="../image/img4.png"
+            alt="Movie 4"
+            onclick="goToPage('movie4')"
+          />
+          >
         </div>
       </div>
     </div>
 
     <div class="box-container">
-      <p1>hiii hiii</p1>
+      <p>hiii hiii</p>
       <p>lnc community</p>
     </div>
+    <script>
+      function goToPage(imageData) {
+        window.location.href = `/image/${imageData}`;
+      }
+    </script>
   </body>
 </html>

@@ -46,10 +46,13 @@ function getGener() {
 }
 
 function getMovieSuggetion() {
-  const age = getAge();
+  const age = getAge(20);
   const language = getLanguage();
   const movieType = getMovieType();
   const gener = getGener();
   return `Suggested ${movieType} in ${language} for ${age} who likes ${gener} genre.`;
 }
 console.log(getMovieSuggetion());
+
+//show the intersection 
+  

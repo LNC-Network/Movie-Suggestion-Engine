@@ -1,41 +1,37 @@
-import "dotenv/config"; // Load environment variables
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import chalk from "chalk";
 import { fileURLToPath } from "url";
 import indexRoute from "./routes/index.js";
 
-/* global process */ // Fix no-undef issue
+/* global process */
 
-// Setup __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Middleware for static files
-app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
+app.use(
+  express.static(path.join(__dirname, "public") /* , { maxAge: "1h" } */)
+);
 
-// Routes
 app.use("/", indexRoute);
 
-// Handle 404 - Not Found
-app.use((req, res) => {
+// 404 Handler (Fix)
+app.use((req, res, next) => { 
   res.status(404).json({
     status: "error",
     message: "Route not found",
   });
 });
 
-// Centralized Error Handling Middleware
-/* eslint-disable no-unused-vars */
-app.use((err, req, res, next) => {
-  const timestamp = new Date().toLocaleString();
-  console.error(
-    chalk.red(`[${timestamp}] ERROR: ${err.message}`),
-    err.stack ? `\n${chalk.gray(err.stack)}` : ""
-  );
-
+// Global Error Handler (Fix)
+app.use((err, req, res, next) => { 
+  console.error(chalk.red(`[ERROR] ${err.message}`));
+  if (err.stack) {
+    console.error(chalk.gray(err.stack));
+  }
   res.status(err.status || 500).json({
     status: "error",
     message: err.message || "Internal Server Error",

@@ -9,18 +9,23 @@
   </head>
   <body>
     <div class="container">
-      <!-- Navigation Bar -->
       <div class="nav-bar">
-        <!-- Search Bar -->
-        <input type="text" placeholder="Search Movie" class="search-bar" />
-
-        <!-- Menu Items -->
-        <div class="menu">
-          <a href="#">Free Movies & TV</a>
-          <a href="#">Live TV</a>
-          <a href="#">Features</a>
-          <a href="#">Download</a>
-          <a href="#">Sign In</a>
+        <img
+          src="../image/logo.png"
+          alt="Logo"
+          class="logo"
+          height="50px"
+          width="50px"
+        />
+        <div class="nav-bar-right">
+          <input type="text" placeholder="Search Movie" class="search-bar" />
+          <div class="menu">
+            <a href="#">Free Movies & TV</a>
+            <a href="#">Live TV</a>
+            <a href="#">Features</a>
+            <a href="#">Download</a>
+            <a href="#">Sign In</a>
+          </div>
         </div>
       </div>
 
@@ -59,13 +64,21 @@
     </div>
 
     <div class="box-container">
-      <p>hiii hiii</p>
-      <p>lnc community</p>
+      <ul class="movie-grid" id="movieGrid">
+        <li class="movie-card">Movie 1</li>
+        <li class="movie-card">Movie 2</li>
+        <li class="movie-card">Movie 3</li>
+        <li class="movie-card">Movie 4</li>
+        <li class="movie-card">Movie 5</li>
+      </ul>
+      <div id="loadMoreTrigger"></div>
+      <!-- Observer target -->
     </div>
     <script>
       function goToPage(imageData) {
         window.location.href = `/image/${imageData}`;
       }
     </script>
+    <script src="../javascripts/load_more.js"></script>
   </body>
 </html>

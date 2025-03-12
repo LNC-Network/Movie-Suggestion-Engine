@@ -1,1 +1,40 @@
+# Node Modules
 node_modules/
+
+# Environment Variables
+.env
+.env.*  
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# IDE Settings
+.vscode/
+.idea/
+.DS_Store
+
+# System Files
+Thumbs.db
+
+# Build Output
+dist/
+out/
+
+# Dependency Lock Files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs and Temp Files
+*.log
+*.tmp
+
+# Coverage Reports
+coverage/
+
+# Database Files
+*.sqlite
+*.sqlite-journal
